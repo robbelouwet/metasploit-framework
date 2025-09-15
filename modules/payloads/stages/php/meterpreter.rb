@@ -6,11 +6,11 @@
 require 'securerandom'
 
 module MetasploitModule
-  include Msf::Sessions::MeterpreterOptions
+  include Msf::Sessions::MeterpreterOptions::Php
 
   def initialize(info = {})
     super(
-      update_info(
+      merge_info(
         info,
         'Name' => 'PHP Meterpreter',
         'Description' => 'Run a meterpreter server in PHP',
